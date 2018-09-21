@@ -1,0 +1,15 @@
+{
+  "name": "lumberjack_for_storewebview",
+  "version": "1.0.0",
+  "description": "더퀴즈라이브 스토어 웹뷰 페이지 내에서 로깅을 위해 사용하는 라이브러리",
+  "scripts": {
+    "start": "npx uglifyjs ./lumberjack_for_storewebview.js --output ./lumberjack_for_storewebview.min.js --compress --mangle"
+  },
+  "keywords": [],
+  "author": "Jihwan Oh <oh.jihwan@nbt.com>",
+  "license": "NBT",
+  "dependencies": {
+    "http-server": "^0.11.1",
+    "uglify-js": "^3.4.9"
+  }
+}

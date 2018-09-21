@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lumberjack Example</title>
+</head>
+<body>
+  <input type="text" placeholder="페이지명" id="pageName">
+  <input type="text" placeholder="이벤트명" id="eventName">
+  <button id="log">로그전송</button>
+
+  <script src="./lumberjack_for_storewebview.min.js"></script>
+
+  <script>
+    document.querySelector('#log').onclick = function() {
+      var pageName = document.querySelector('#pageName').value;
+      var eventName = document.querySelector('#eventName').value;
+      if(!pageName || !eventName) return alert('예제 전송을 위한 페이지명과 이벤트명을 입력하세요.');
+
+      window.lumberjack.track(
+        'event', // page or event
+        pageName + '::' + eventName + '::event', /* 페이지명::이벤트이름::event */ 
+        { product_id: 1 } /* 생략 가능하며, 추가적인 데이터를 저장할 때 사용되는 객체 -> info : {key: value, key: value, ...} */)
+    };
+  </script>
+</body>
+</html>
