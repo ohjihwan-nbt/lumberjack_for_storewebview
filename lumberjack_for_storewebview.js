@@ -15677,6 +15677,7 @@ exports.default = {
     if(!info) info = {};
     // kibana에서 스테이지 환경에서의 로그는 제거하고 확인할 수 있도록 info가 무조건 작성되도록 한다.
     info.isStage = this.isStage;
+    info.pageName = String(eventName).split('::')[0].replace('webview-', '') || null
 
     var promiseList = [this.getSession(), this.getDeviceInfo(), this.getAppInfo(), this.getUserInfo()];
     var config = { headers: { 'Content-Type': 'application/vnd.kafka.json.v1+json' } };
