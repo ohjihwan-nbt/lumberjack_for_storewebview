@@ -15711,7 +15711,7 @@ exports.default = {
 
       try {
         // iOS 동작 확인 필요
-        if (!window.SharedWebView || !window.SharedWebView.getUserProfile) return;
+        if (!window.SharedWebView || !window.SharedWebView.getUserProfile) return console.error('SharedWebView not found.');
 
         _axios2.default.post(_constants2.default.ENDPOINT, data, config);
       } catch (error) {
